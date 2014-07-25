@@ -1,0 +1,6 @@
+{
+    "name": "peperone",
+    "dependencies": {
+        "mocha": "*"
+    }
+}

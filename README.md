@@ -11,6 +11,7 @@ Simple web timetracking tool
 
 ### Using the development VM
 
-     vagrant plugin install vagrant-omnibus vagrant-berkshelf
+     vagrant plugin install vagrant-omnibus
+     vagrant plugin install vagrant-berkshelf --plugin-version=2.0.1
      vagrant up
      vagrant ssh

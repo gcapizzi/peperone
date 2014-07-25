@@ -1,6 +1,7 @@
 include_recipe 'apt'
 include_recipe 'ruby_build'
 include_recipe 'rbenv'
+include_recipe 'nodejs'
 
 package 'git-core'
 

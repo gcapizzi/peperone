@@ -8,4 +8,3 @@ group :test do
   gem 'mocha', :require => false
   gem 'rack-test', :require => 'rack/test'
 end
-
