@@ -1,8 +1,8 @@
 var endDate;
 var intervalId;
 
-function startClock() {
-    endDate = new Date(new Date().getTime() + 25 * 60000);
+function startClock(minutes) {
+    endDate = new Date(new Date().getTime() + minutes * 60000);
     intervalId = setInterval(checkTime, 1000);
 }
 

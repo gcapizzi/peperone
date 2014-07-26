@@ -15,9 +15,9 @@ end
 rbenv_gem 'bundler'
 rbenv_gem 'foreman'
 
-execute "install heroku toolbelt" do
-  command "wget -qO- https://toolbelt.heroku.com/install.sh | sh"
+execute 'install heroku toolbelt' do
+  command 'curl https://toolbelt.herokuapp.com/apt/release.key | apt-key add - && wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh --no-check-certificate | sh'
   action :run
-  not_if { ::File.exists?("/usr/local/heroku/bin/heroku") }
+  not_if 'which heroku'
 end
 
