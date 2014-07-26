@@ -9,6 +9,8 @@ function startClock(minutes) {
 function checkTime() {
     var timeLeft = (endDate - new Date().getTime()) / 1000;
     if (timeLeft <= 0) {
+        timeLeft = 0;
+        updateClock(timeLeft);
         clearInterval(intervalId);
         notifyExpired();
     } else {
@@ -20,7 +22,11 @@ function updateClock(timeLeft, clock) {
     minutes = parseInt(timeLeft / 60);
     seconds = parseInt(timeLeft % 60);
     var clock = $(".clock");
-    clock.html(minutes + ":" + seconds);
+    clock.html(pad(minutes) + ":" + pad(seconds));
+}
+
+function pad(number) {
+    return (number < 10 ? '0' : '') + number
 }
 
 function notifyExpired() {
