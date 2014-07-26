@@ -1,8 +1,6 @@
 # Peperone
 
-Simple web timetracking tool
-
-## Usage
+Simple web time tracking tool [http://peperone.me](http://peperone.me)
 
 ## Development
 
@@ -15,3 +13,5 @@ Simple web timetracking tool
      vagrant plugin install vagrant-berkshelf --plugin-version=2.0.1
      vagrant up
      vagrant ssh
+     bundle install
+     foreman start
