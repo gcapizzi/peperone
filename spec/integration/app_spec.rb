@@ -5,6 +5,12 @@ describe "Peperone App" do
     Sinatra::Application
   end
 
+  it "shows peperone on the home page" do
+    get '/'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('25:00')
+  end
+
   it "shows peperone" do
     get '/peperones'
     expect(last_response).to be_ok
