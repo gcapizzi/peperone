@@ -1,6 +1,10 @@
 {
     "name": "peperone",
     "dependencies": {
-        "mocha": "*"
+        "mocha": "*",
+        "chai": "*",
+        "sinon": "*",
+        "jsdom": "*",
+        "jquery": "*"
     }
 }

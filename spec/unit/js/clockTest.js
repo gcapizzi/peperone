@@ -1,10 +1,31 @@
-var assert = require("assert")
+var expect = require('chai').expect;
+var sinon = require('sinon');
+var jsdom = require('jsdom').jsdom;
+var doc = jsdom('');
+global.window = doc.createWindow();
+global.window = window;
+global.$ = require('jquery');
 
-describe('Array', function(){
-    describe('#indexOf()', function(){
-        it('should return -1 when the value is not present', function(){
-            assert.equal(-1, [1,2,3].indexOf(5));
-            assert.equal(-1, [1,2,3].indexOf(0));
+clock = require('../../../public/js/clock.js');
+
+describe('Clock', function() {
+
+    describe('#startClock()', function() {
+        beforeEach(function() {
+            this.systemClock = sinon.useFakeTimers();
+        })
+
+        afterEach(function() {
+            this.systemClock.restore();
+        })
+
+        it('should update clock span', function() {
+            $('body').html('<span class="clock"></span>')
+
+            clock.startClock(25);
+            this.systemClock.tick(1000);
+
+            expect($('.clock').html()).to.equal('24:59')
         })
     })
 })

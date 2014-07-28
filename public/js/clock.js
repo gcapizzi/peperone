@@ -18,7 +18,7 @@ function checkTime() {
     }
 }
 
-function updateClock(timeLeft, clock) {
+function updateClock(timeLeft) {
     minutes = parseInt(timeLeft / 60);
     seconds = parseInt(timeLeft % 60);
     var clock = $(".clock");
@@ -41,4 +41,8 @@ function requestPermission() {
     Notification.requestPermission(function(status) {
         Notification.permission = status;
     });
+}
+
+if (typeof module !== 'undefined' && module.exports != null) {
+    exports.startClock = startClock;
 }
